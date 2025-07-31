@@ -4,8 +4,10 @@ import {
   ChevronRightIcon,
   DotsHorizontalIcon,
 } from "@radix-ui/react-icons";
-import { ButtonProps, buttonVariants } from "src//button";
-import { cn } from "src/lib/utils";
+
+import type { ButtonProps } from "./button";
+import { buttonVariants } from "./button";
+import { cn } from "./lib/utils";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
@@ -64,11 +66,12 @@ PaginationLink.displayName = "PaginationLink";
 
 const PaginationPrevious = ({
   className,
+  size,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     aria-label="Go to previous page"
-    size="default"
+    size={size ?? "md"}
     className={cn("gap-1 pl-2.5", className)}
     {...props}
   >
@@ -80,11 +83,12 @@ PaginationPrevious.displayName = "PaginationPrevious";
 
 const PaginationNext = ({
   className,
+  size,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     aria-label="Go to next page"
-    size="default"
+    size={size ?? "md"}
     className={cn("gap-1 pr-2.5", className)}
     {...props}
   >
