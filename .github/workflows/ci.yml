@@ -43,7 +43,7 @@ jobs:
         uses: ./tooling/github/setup
 
       - name: Format
-        run: pnpm format
+        run: pnpm turbo run format --continue --force
 
   typecheck:
     runs-on: ubuntu-latest
